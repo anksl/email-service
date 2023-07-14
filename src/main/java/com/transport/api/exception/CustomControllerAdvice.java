@@ -24,7 +24,7 @@ import java.util.Objects;
 public class CustomControllerAdvice {
 
     @ExceptionHandler({MethodArgumentNotValidException.class})
-    @ResponseStatus
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public Map<String, String> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {

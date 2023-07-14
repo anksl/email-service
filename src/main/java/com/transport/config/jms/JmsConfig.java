@@ -1,4 +1,4 @@
-package com.transport.config;
+package com.transport.config.jms;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.activemq.ActiveMQConnectionFactory;

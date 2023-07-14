@@ -49,4 +49,19 @@ public class EmailServiceImpl implements EmailService {
         }
     }
 
+    public void sendTemplateMail(Email details) {
+        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
+        MimeMessageHelper mimeMessageHelper;
+        try {
+            mimeMessageHelper = new MimeMessageHelper(mimeMessage, true);
+            mimeMessageHelper.setFrom(details.getSender());
+            mimeMessageHelper.setTo(details.getRecipients().toArray(String[]::new));
+            mimeMessageHelper.setText(details.getMsgBody(), true);
+            mimeMessageHelper.setSubject(details.getSubject());
+            javaMailSender.send(mimeMessage);
+        } catch (MessagingException e) {
+            log.error("Error while sending mail!");
+            throw new EmailSendingException("Error while sending mail!");
+        }
+    }
 }

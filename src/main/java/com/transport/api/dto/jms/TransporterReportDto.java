@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 @Getter
 @Setter
@@ -16,6 +17,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @ToString
 public class TransporterReportDto implements Serializable {
-    String userEmail;
-    String report;
+    private String userEmail;
+    private Date startDate;
+    private Date endDate;
+    private Integer amountOfTransportations;
+    private Short distance;
+    private Short fuelConsumption;
+    private Short fuelCost;
+    private Short income;
 }

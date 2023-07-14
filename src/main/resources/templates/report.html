@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Template for HTML email</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<p>
+    Report for period: <b th:text="${startDate}"></b> - <b th:text="${endDate}"></b>
+</p>
+<ul>
+    <li>Amount of transportations: <b th:text="${amountOfTransportations}"></b></li>
+    <li>Distance: <b th:text="${distance}"></b> km</li>
+    <li>Fuel consumption: <b th:text="${fuelConsumption}"></b> l</li>
+    <li>Spent on fuel: <b th:text="${fuelCost}"></b> €</li>
+    <li>Total income: <b th:text="${income}"></b> €</li>
+</ul>
+</body>
+</html>
